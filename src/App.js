@@ -1,23 +1,23 @@
 import React from 'react';
 import './app.css';
 import Navbar from './components/Navbar/Navbar';
- //import Home from './components/Home/Home';
-// import Popular from './components/Popular/Popular';
-// import Offer from './components/Offer/offer'; // Make sure the file name is correct
-// import About from './components/About/About';
-// import Blog from './components/Blog/Blog';
-// import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import Popular from './components/Popular/Popular';
+import Offer from './components/Offer/Offer'; // Make sure the file name is correct
+import About from './components/About/About';
+import Blog from './components/Blog/Blog';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
     <>
       <Navbar />
-       {/* <Home /> */}
-      {/*<Popular />
-      <Offer />
+      <Home /> 
+      <Popular />
+      <Offer/>
       <About />
-      <Blog />
-      <Footer /> */}
+      <Blog /> 
+      <Footer />  
     </>
   );
 };

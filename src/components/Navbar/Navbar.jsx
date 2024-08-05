@@ -1,75 +1,88 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './navbar.css';
-import './navbar.scss'
+import './navbar.scss';
 import { MdOutlineTravelExplore } from "react-icons/md";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 
 const Navbar = () => {
-  //code of toggle/show navabr
-  const [active, setActive]  = useState ('navBar')
-  const showNav = () => {  
-    setActive('navBar activeNavbar')
+  // Toggle/show navbar
+  const [active, setActive] = useState('navBar');
+  
+  const showNav = () => {
+    setActive('navBar activeNavbar');
   }
 
-  // revers Navbar
-  const removeNav = ()=>{
-    setActive('navBar activNavbar')
+  // Reverse Navbar
+  const removeNav = () => {
+    setActive('navBar');
   }
 
+
+
+  // Add background color to the header on scroll
+  const [transparent, setTransparent] = useState('header');
+  
+  const addBg = () => {
+    if (window.scrollY >= 10) {
+      setTransparent('header activeHeader');
+    } else {
+      setTransparent('header');
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', addBg);
+    return () => {
+      window.removeEventListener('scroll', addBg);
+    };
+  }, []);
 
   return (
     <section className="navBarSection">
-      <div className="header">
+      <div className={transparent}>
         <div className="logoDiv">
           <a href="#" className="logo">
-            <MdOutlineTravelExplore className="icon" />
+           <h1><MdOutlineTravelExplore className="icon" />Dot</h1>
           </a>
-          <h1></h1>
+        
         </div>
 
         <div className={active}>
-          < ul className="navLists flex">
+          <ul className="navLists flex">
             <li className="navItem">
               <a href="#" className="navLink">Home</a>
             </li>
-
             <li className="navItem">
               <a href="#" className="navLink">Product</a>
             </li>
-
             <li className="navItem">
               <a href="#" className="navLink">Resources</a>
             </li>
-
             <li className="navItem">
               <a href="#" className="navLink">Contact</a>
             </li>
-
             <li className="navItem">
               <a href="#" className="navLink">Blog</a>
             </li>
           
-             <div className="headerBtns flex">
-             <button className="btn loginBtn">
-              <a href="#">Login</a>
-            </button>
-            <button className="btn signupBtn">
-              <a href="#">Sign Up</a>
-            </button>
-             </div>
+            <div className="headerBtns flex">
+              <button className="btn loginBtn">
+                <a href="#">Login</a>
+              </button>
+              <button className="btn signupBtn">
+                <a href="#">Sign Up</a>
+              </button>
+            </div>
           </ul>
 
-          <div onClick={removeNav}
-          className="closeNavbar">
-          <AiFillCloseCircle  className='icon'/>
-              
+          <div onClick={removeNav} className="closeNavbar">
+            <AiFillCloseCircle className='icon' />
           </div>
         </div>
 
-        <div onClick={showNav}
-         className="toggleNavbar">
-        <TbGridDots  className='icon'/>
+        <div onClick={showNav} className="toggleNavbar">
+          <TbGridDots className='icon' />
         </div>
       </div>
     </section>
@@ -77,3 +90,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+  

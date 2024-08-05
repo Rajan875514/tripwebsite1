@@ -60,19 +60,20 @@ li {
     outline: none;
     border-radius: 3rem;
     cursor: pointer;
-    display: flex;
+    
+
 }
 
-.btn a {
+.btn a{
     color: var(--whiteColor);
     font-weight: 500;
 }
 
-.btn:hover a {
+.btn:hover a{
     color: var(--whiteColor);
 }
 
-.secIntro {
+.secIntro{
     max-width: 70%;
     text-align: center;
     margin: 0 auto 2rem;
