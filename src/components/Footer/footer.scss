@@ -1,0 +1,84 @@
+:root {
+    --PrimaryColor: hsl(26, 93%, 50%);
+    --HoverColor: hsl(26, 90%, 42%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+  }
+  
+  .footer {
+    background: var(--greyBg);
+    padding: 2rem 0;
+  
+    .secContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+  
+      .footerLogo {
+        .logo {
+          color: var(--blackColor);
+          font-weight: 500;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+        }
+  
+        .icon {
+          font-size: 25px;
+          color: var(--PrimaryColor);
+          margin-right: .5rem;
+        }
+      }
+  
+      .socail {
+        gap: .5rem;
+        display: flex;
+        justify-content: center;
+  
+        .icon {
+          font-size: 30px;
+          background: var(--PrimaryColor);
+          border-radius: 50%;
+          padding: 8px;
+          color: var(--whiteColor);
+        }
+      }
+  
+      .footerLinks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+  
+        .linkTitle {
+          padding-bottom: .5rem;
+          color: var(--blackColor);
+          font-weight: 700;
+        }
+  
+        li {
+          list-style: none;
+  
+          &:hover {
+            transform: translateY(-5px); /* Changed to -5px for subtle hover effect */
+            transition: transform 0.3s ease-in-out;
+          }
+        }
+  
+        a, .phone, .email {
+          color: var(--textColor);
+          font-size: 13px;
+          font-weight: 500;
+          text-decoration: none; /* Ensures links have no underline */
+        }
+      }
+    }
+  }
+  

@@ -6,11 +6,8 @@ import img1 from '../../Assets/mountain.jpg';
 import img2 from '../../Assets/climbing.jpg';
 import img3 from '../../Assets/customer.png';
 
-
-//=======     =====video
-
-import video  from '../../Assets/video.mp4';
-
+// Video import
+import video from '../../Assets/video.mp4';
 
 const About = () => {
   return (
@@ -59,8 +56,7 @@ const About = () => {
               </p>
             </div>
             <div className="cardVideo">
-               <video src={video}autoplay loop muted
-                typeof='video/mp4'></video>
+              <video src={video} autoPlay loop muted type='video/mp4'></video>
             </div>
           </div>
         </div>

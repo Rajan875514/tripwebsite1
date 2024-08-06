@@ -96,8 +96,14 @@
                      }
 
                      .btn{
+                                margin-top: 1rem;
+                                width: 100%;
+                                text-align: center;
+                                justify-content: center;
+                                padding: .6rem;
                                 color: var(--whiteColor);
-                                justify-content: space-between;
+                                font-weight: 600;
+                                gap: .5rem;
                      }
                 }
 

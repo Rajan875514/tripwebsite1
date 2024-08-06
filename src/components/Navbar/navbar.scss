@@ -9,8 +9,8 @@
     --inputColor: hsl(330, 12%, 97%);
 }
 
-.navBarSection{
-    .header{
+.navBarSection {
+    .header {
         position: fixed;
         display: flex;
         align-items: center;
@@ -20,16 +20,15 @@
         padding: 1rem;
         z-index: 1000;
 
-        .logoDiv{
-            .logo{
+        .logoDiv {
+            .logo {
                 color: var(--whiteColor);
                 font-weight: 500;
                 cursor: pointer;
                 align-items: center;
                 justify-content: center;
 
-
-                .icon{
+                .icon {
                     color: var(--PrimaryColor);
                     font-size: 25px;
                     margin-right: 10px;
@@ -38,102 +37,173 @@
         }
 
         @media screen and (max-width: 768px) {
-            .navBar{
-                 background: var(--greyBg);
-                 position: absolute;
-                 height: max-content;
-                 padding: 1rem;
-                 width: 100%;
-                 top: 0;
-                 left: -500%;
-                 box-shadow: 0 2px 4px rgba(209, 209 , 209, 0.904);
-                 transition: .5s ease;
-                 z-index: 1000;
-                
+            .navBar {
+                background: var(--greyBg);
+                position: absolute;
+                height: max-content;
+                padding: 1rem;
+                width: 100%;
+                top: 0;
+                left: -500%;
+                box-shadow: 0 2px 4px rgba(209, 209, 209, 0.904);
+                transition: .5s ease;
+                z-index: 1000;
 
-                 .navLists{
+                .navLists {
                     flex-direction: column;
                     justify-content: center;
                     width: 100%;
                     margin: auto;
 
-                    .navItem{
+                    .navItem {
                         padding: 1rem 0;
 
-                       .navLink{
-                        color: var(--textColor);
-                        font-size: .9rem;
-                        font-weight: 600;
-                        &:hover{
-                            color: var(--PrimaryColor)
+                        .navLink {
+                            color: var(--textColor);
+                            font-size: .9rem;
+                            font-weight: 600;
+                            &:hover {
+                                color: var(--PrimaryColor);
+                            }
                         }
-                       }
                     }
-                    .headerBtns{
+
+                    .headerBtns {
                         flex-direction: column;
-                        .btn{
+
+                        .btn {
                             margin-top: 1rem;
-                              a{
+
+                            a {
                                 font-weight: 600;
 
-                                &:hover{
+                                &:hover {
                                     color: var(--whiteColor);
                                 }
-                              }
+                            }
                         }
-                        .loginBtn{
+
+                        .loginBtn {
                             background: none;
                             border: 1px solid var(--PrimaryColor);
-                            a{
+
+                            a {
                                 color: var(--HoverColor);
                             }
-                            &:hover{
+
+                            &:hover {
                                 background: var(--HoverColor);
 
-                                a{
-                                    color:var(--whiteColor);
+                                a {
+                                    color: var(--whiteColor);
                                 }
                             }
-        
                         }
-
                     }
-                 }
+                }
 
-
-                 .closeNavbar{
+                .closeNavbar {
                     position: absolute;
                     top: 1rem;
                     right: 1.5rem;
                     color: var(--PrimaryColor);
-                    &:hover .icon{
+                    &:hover .icon {
                         color: var(--HoverColor);
                     }
-                 }
-
-
-                
+                }
             }
-            
-            .activeNavbar{
+
+            .activeNavbar {
                 left: 0;
-             }
-            
+            }
         }
 
-
-        .toggleNavbar{
-            .icon{
-                font-style: 25px;
+        .toggleNavbar {
+            .icon {
+                font-size: 25px; /* Corrected property */
                 color: var(--PrimaryColor);
-                &:hover{
-                    color: var(--PrimaryColor)
+                &:hover {
+                    color: var(--PrimaryColor);
                 }
             }
         }
     }
-    .activeHeader{
+
+    .activeHeader {
         background: var(--textColor);
-        box-sizing:  0 2px 8px 2px rgba(178 , 178, 178,0.45);
+        box-sizing: 0 2px 8px 2px rgba(178, 178, 178, 0.45);
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .toggleNavbar,
+    .closeNavbar {
+        display: none;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+
+        .navBar {
+            .navLists {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+                .navItem {
+                    .navLink {
+                        color: var(--whiteColor);
+                        padding: .45rem;
+                        font-size: .9rem;
+                        font-weight: 400;
+
+                        &:hover {
+                            color: var(--PrimaryColor);
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-left: 1rem;
+
+                    a {
+                        color: var(--whiteColor);
+                        font-weight: 400;
+                    }
+                }
+
+                .loginBtn {
+                    background: none;
+                    border: 1px solid var(--PrimaryColor);
+
+                    &:hover {
+                        background: var(--PrimaryColor);
+
+                        a {
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 960px) { /* Corrected media query */
+    .header {
+        .navBar {
+            .navLists {
+                .navItem {
+                    padding: 0.7rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        padding: 1rem 8.5rem !important;
     }
 }
